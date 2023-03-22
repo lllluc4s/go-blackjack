@@ -1,28 +1,31 @@
-README - Blackjack Game
-Este é um código simples em Go que implementa o jogo de Blackjack. O jogo é jogado pelo usuário contra o dealer, que é representado pelo computador.
+# Blackjack
 
+Implementação simples do jogo Blackjack em Go.
 
-Requisitos
-Go 1.16 ou superior
+## Regras
 
+- O jogador tenta vencer o dealer alcançando uma pontuação total maior do que o dealer sem exceder 21.
+- Cada jogador e o dealer recebem duas cartas do baralho.
+- As cartas têm os seguintes valores:
+  - Ases podem valer 1 ou 11 (o programa escolhe automaticamente a melhor opção).
+  - As outras cartas valem seu valor facial (2 a 10).
+  - J, Q e K valem 10 pontos cada.
+- Se o jogador receber um Ás e uma carta com valor 10 em sua mão inicial, ele tem um "blackjack" e vence automaticamente, a menos que o dealer também tenha um "blackjack".
+- O jogador decide se quer "bater" (receber outra carta) ou "ficar" (não receber mais cartas).
+- Se o jogador ultrapassar 21 pontos, ele perde automaticamente.
+- Quando o jogador decide ficar, é a vez do dealer jogar.
+- O dealer bate (recebe mais cartas) até que sua pontuação total seja pelo menos 17.
+- Se o dealer ultrapassar 21 pontos, o jogador vence automaticamente.
+- Se o jogador e o dealer tiverem a mesma pontuação, é considerado um empate.
+- O jogador pode jogar novamente.
 
-Como jogar
-Execute o arquivo main.go usando o comando "go run main.go" no terminal.
-Você receberá duas cartas, assim como o dealer. A pontuação de suas cartas é exibida.
-Escolha entre "hit" ou "stand". Se escolher "hit", você receberá uma nova carta e sua pontuação será atualizada. Se escolher "stand", você manterá sua pontuação atual.
-O dealer irá bater até que sua pontuação seja igual ou maior que 17.
-Se sua pontuação for maior que a do dealer e menor ou igual a 21, você ganha. Se a pontuação do dealer for maior que a sua e menor ou igual a 21, você perde. Se ambas as pontuações forem iguais, o jogo é um empate.
+## Como Jogar
 
+1. Baixe e instale o Go: https://golang.org/
+2. Abra o terminal e navegue até o diretório onde está o código.
+3. Execute o comando `go run main.go`.
+4. Siga as instruções na tela para jogar.
 
-Entendendo o código
-O código é dividido em três funções principais:
+## Licença
 
-- drawCard(cards []string) string: seleciona aleatoriamente uma carta do baralho e a remove do mesmo.
-
-- calculateScore(cards []string, cardValues map[string]int) int: calcula a pontuação das cartas de acordo com seus valores e retorna o resultado.
-
-- main(): gerencia todo o fluxo do jogo.
-
-O jogo usa duas variáveis para acompanhar as cartas do jogador e do dealer, bem como as pontuações de cada um. Os valores das cartas são definidos no mapa cardValues e as cartas disponíveis são armazenadas em uma fatia cards.
-
-As cartas são selecionadas aleatoriamente usando o gerador de números aleatórios fornecido pela biblioteca "math/rand". O jogo usa um loop para pedir ao jogador para bater ou ficar, e outro loop para o dealer bater até que sua pontuação seja igual ou maior que 17.
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
