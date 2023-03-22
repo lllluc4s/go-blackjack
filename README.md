@@ -26,6 +26,3 @@ Implementação simples do jogo Blackjack em Go.
 3. Execute o comando `go run main.go`.
 4. Siga as instruções na tela para jogar.
 
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
